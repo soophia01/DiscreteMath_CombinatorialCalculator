@@ -1,0 +1,54 @@
+body {
+  font-family: "Consolas";
+  font-size: 18px;
+}
+
+h1 {
+  font-size: 30px;
+  text-align: center;
+  color: #849485;
+  letter-spacing: 2px;
+  font-family: "Bookman Old Style";
+}
+
+table {
+  width: 100%;
+  max-width: 100%;
+}
+table tr {
+  height: 25px;
+  text-align: center;
+}
+table tr .text-center {
+  text-align: center;
+}
+table tr input {
+  width: 120px;
+  max-width: 100%;
+}
+table tr th {
+  background-color: #849c85;
+  color: white;
+  text-align: left;
+  text-indent: 10px;
+  font-size: 17px;
+}
+table tr:nth-child(1) th {
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+  height: 50px;
+  font-size: 20px;
+  letter-spacing: 1px;
+}
+table tr:nth-child(8) th, table tr:nth-child(8) td {
+  border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 7px;
+  height: 40px;
+  font-size: 22px;
+}
+table .dc-color1 {
+  background-color: #d1d9b2;
+}
+table .dc-color2 {
+  background-color: #fffbe9;
+}/*# sourceMappingURL=style.css.map */

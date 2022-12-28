@@ -1,0 +1,254 @@
+<!-- I put comments here for you guys to learn html & javascript quickly. Refer to https://www.w3schools.com/tags/default.asp for "tags" in html.
+     G. S. Lee and S. J. Shyu Ver. 0.5 2019/03/08
+-->
+<!DOCTYPE html> <!--The <!DOCTYPE> declaration must be the very first thing in your HTML document, before the <html> tag.
+					The <!DOCTYPE> declaration is not an HTML tag; it is an instruction to the web browser about what version of HTML the page is written in.
+					Tip: Always add the <!DOCTYPE> declaration to your HTML documents, so that the browser knows what type of document to expect.
+				-->
+<html>  <!--The <html> tag tells the browser that this is an HTML document.
+			The <html> tag represents the root of an HTML document.
+			The <html> tag is the container for all other HTML elements (except for the <!DOCTYPE> tag).
+		-->
+	<head>	<!--The <head> element is a container for all the head elements.
+				The <head> element can include a title for the document, scripts, styles, meta information, and more.
+			-->
+		<!-- The <title> element defines the title of the document, and is required in all HTML/XHTML documents.  -->	
+		<title> 
+				Permutations and Combinations by S. J. Shyu  Ver. 0.3 2019/03/08 
+		</title>
+		<style> <!-- The <style> tag is used to define style information for an HTML document.
+					 Inside the <style> element you specify how HTML elements should render in a browser.
+					 Each HTML document can contain multiple <style> tags.
+				-->
+			<!-- Some specific properties of the tags: body, table and td are re-defined (as needed) as below. -->
+			body 	{ 	<!-- font-family: consolas;  -->
+						font-family: Times;
+					}
+			table 	{	text-align: center;
+						border-collapse: collapse;
+					}
+			th, td 	{	padding: 5px;
+						border: 1px solid #dddddd;
+					}
+			input[type="number"] 	{	width: 60px;
+									}
+		</style>
+	</head>
+	<body>	<!-- The <body> tag defines the document's body.
+				 The <body> element contains all the contents of an HTML document, such as text, hyperlinks, images, tables, lists, etc.
+			-->
+   	<table  bgcolor="c1d1c1"; style="text-align:left;">   
+		<tr>
+			<td rowspan="3"><img id="myImage" src="https://drive.google.com/uc?export=download&id=1ovAT5EtPoN1lD4uBxUqW44-_IUGVyabi" align="center" width="76" height="54">
+		
+		<!-- <td rowspan="3"><img id="myImage" src="https://lh3.googleusercontent.com/wgbzC9NQmY0oA4RlQe56A51JBsZozuY0UWBvTCaWUGS12BWsxRbkAbGkeTb8cu81mVcJPRI4Dv6pxlo4d0qn48idFY4nK_n9-BV7ApnD32hyz2yIIE6V=w572" align="center" width="76" height="50">
+		-->
+		</td>
+
+		</tr> 
+		<tr>
+			<td> <b><u>Permutations and Combinations</u></b> <br> <font size="-1" color="887799"> by Shyong Jian Shyu, sjshyu@gmail.com, Mar, 2019, Ver.0.8
+            </td>
+		</tr>
+	</table>			
+			
+		<table>	<!-- The <table> tag defines an HTML table.
+					 An HTML table consists of the <table> element and one or more <tr>, <th>, and <td> elements.
+					 The <tr> element defines a table row, the <th> element defines a table header, and the <td> element defines a table cell.
+				-->
+			<tr  bgcolor="ccddcc";>
+				<th>Formula
+				</th>
+				<th><label><i>n</i> = </label>
+					<input type="number" id="n" value="7" min="0">
+					<label><i>r</i> = </label>
+					<input type="number" id="r" value="3" min="0">
+				</th>
+				<th><button type="button" onclick="computeAll()">Compute All</button>
+				</th>	
+				<th>Order relevant
+				</th>
+				<th>Repetition
+				</th>				
+				<th>Memo
+				</th>								
+			</tr>
+<!--		<tr>
+				<td>
+					<label>n = </label>
+					<input type="number" id="n" value="7" min="0">
+				</td>
+				<td>
+					<label>r = </label>
+					<input type="number" id="r" value="3" min="0">
+				</td>
+				<td>
+					<button type="button" onclick="clickAll()">計算全部</button>
+				</td>
+			</tr>
+-->			
+			<tr>
+				<td>
+					<label><i>P</i>(<i>n</i>, <i>r</i>)</label>
+				</td>
+				<td>
+					<!-- The <span> tag is used to group inline-elements in a document.
+						 The <span> tag provides no visual change by itself.
+						 The <span> tag provides a way to add a hook to a part of a text or a part of a document.
+					-->
+					<span id="resPermutation"></span>
+				</td>
+				<td>
+					<button type="button" onclick="clickPerm()">Permutation</button>
+				</td>
+				<td>
+					yes
+				</td>
+				<td>
+					no
+				</td>
+				<td align="left">
+					# Permutations of size <i>r</i> from <i>n</i> distinct objects
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<label><i>C</i>(<i>n</i>, <i>r</i>)</label>
+				</td>
+				<td>
+					<span id="resCombination"></span>
+				</td>
+				<td>
+					<button type="button" onclick="clickComb()">Combination</button>
+				</td>
+				<td>
+					no
+				</td>
+				<td>
+					no
+				</td>
+				<td align="left">
+					# Selections/Combinations of size <i>r</i> from <i>n</i> distinct objects
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<label><i>n<sup>r</sup></i></label>
+				</td>
+				<td>
+					<span id="resArrangement"></span>
+				</td>
+				<td>
+					<button type="button" onclick="clickArra()">Arrangement with repetition</button>
+				</td>
+				<td>
+					yes
+				</td>
+				<td>
+					yes
+				</td>
+				<td align="left">
+					# Arrangements with repetition of size <i>r</i> from <i>n</i> distinct objects
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<label><i>C</i>(<i>r</i>+<i>n</i>-1, <i>r</i>)</label>
+				</td>
+				<td>
+					<span id="resSelectrofn"></span>
+				</td>
+				<td>
+					<button type="button" onclick="clickSele()">Selection with repetition</button>
+				</td>
+				<td>
+					no
+				</td>
+				<td>
+					yes
+				</td>
+				<td align="left">
+					# Selections with repetition of size <i>r</i> from <i>n</i> distinct objects
+				</td>
+			</tr>
+		</table>
+		<!-- The <script> tag is used to define a client-side script (JavaScript).
+			 The <script> element either contains scripting statements, or it points to an external script file through the src attribute.
+		-->
+		<script>
+		// <script type="text/javascript">
+			function Factorial(n)
+			{	fact = 1;
+				for (i=2; i<=n; i++)
+					fact *= i;
+				return fact;
+			}
+			function Perm(n, r)
+			{	perm = n;
+				for (i=n-1; i>n-r; i--)
+					perm *= i;
+				return perm;
+			}
+			function Comb(n, r)
+			{	return Perm(n, r) / Factorial(r);
+			}	
+			function invalid(n, r)
+			{	if (parseInt(n) < 0 || isNaN(parseInt(n)))
+				{	document.getElementById("n").focus();
+					return true;
+				}
+				else if (parseInt(r) < 0 || isNaN(parseInt(r)))
+				{	document.getElementById("r").focus();
+					return true;
+				}
+				return false;
+			}
+			
+			function computeAll()
+			{	document.getElementById("resPermutation").innerHTML = "";
+				document.getElementById("resCombination").innerHTML = "";
+				document.getElementById("resArrangement").innerHTML = "";
+				document.getElementById("resSelectrofn").innerHTML = "";
+				n = document.getElementById("n").value;
+				r = document.getElementById("r").value;
+				if (invalid(n, r)) return;				
+				clickPerm();
+				clickComb();
+				clickArra();
+				clickSele();
+			}
+			
+			function clickPerm()
+			{	document.getElementById("resPermutation").innerHTML = "";
+				n = document.getElementById("n").value;
+				r = document.getElementById("r").value;
+				if (invalid(n, r)) return;
+				document.getElementById("resPermutation").innerHTML = Perm(n, r);
+			}
+			
+			function clickComb()
+			{	document.getElementById("resCombination").innerHTML = "";
+				n = document.getElementById("n").value;
+				r = document.getElementById("r").value;										
+				if (invalid(n, r)) return;				
+				document.getElementById("resCombination").innerHTML = Comb(n, r);
+			}
+			
+			function clickArra()
+			{	document.getElementById("resArrangement").innerHTML = ""
+				n = document.getElementById("n").value;
+				r = document.getElementById("r").value;
+				if (invalid(n, r)) return;				
+				document.getElementById("resArrangement").innerHTML = Math.pow(n, r);
+			}
+			
+			function clickSele()
+			{	document.getElementById("resSelectrofn").innerHTML = "";
+				n = parseInt(document.getElementById("n").value);
+				r = parseInt(document.getElementById("r").value);
+				if (invalid(n, r)) return;
+				document.getElementById("resSelectrofn").innerHTML = Comb(n + r - 1, r);
+			}
+		</script>
+	</body>
+</html>
