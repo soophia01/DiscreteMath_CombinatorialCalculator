@@ -44,11 +44,109 @@ table tr:nth-child(8) th, table tr:nth-child(8) td {
   border-bottom-left-radius: 7px;
   border-bottom-right-radius: 7px;
   height: 40px;
-  font-size: 22px;
 }
 table .dc-color1 {
   background-color: #d1d9b2;
 }
 table .dc-color2 {
   background-color: #fffbe9;
+}
+table .dc-color1 th button, table .dc-color2 td button {
+  width: 100px;
+  max-width: 100%;
+  height: 30px;
+  font-family: "Consolas";
+  letter-spacing: 1px;
+  font-weight: bold;
+  background-color: #FFED9A;
+  color: #998d5c;
+  border-radius: 6px;
+  border-color: #998d5c;
+}
+table .dc-color1 th button:hover, table .dc-color2 td button:hover {
+  cursor: pointer;
+  background-color: #998d5c;
+  color: #FFED9A;
+  -webkit-box-shadow: -1px -1px 2px #ccc;
+          box-shadow: -1px -1px 2px #ccc;
+}
+table .dc-color1 th button:active, table .dc-color2 td button:active {
+  position: relative;
+  top: 1.5px;
+  left: 1.5px;
+}
+table .dc-color1:nth-child(1) th {
+  width: 250px;
+  max-width: 100%;
+}
+table .dc-color1:nth-child(8) th {
+  text-align: center;
+  text-indent: 0px;
+}
+table .dc-color1:nth-child(8) th button {
+  width: 150px;
+  text-align: center;
+}
+table .interpretation {
+  height: 35px;
+}
+table .interpretation .show {
+  width: 100px;
+  max-width: 100%;
+  height: 25px;
+  margin: 10px;
+  font-family: "Consolas";
+  letter-spacing: 1px;
+  font-weight: bold;
+  background-color: #b7adcc;
+  color: white;
+  border-radius: 6px;
+  border-color: #898199;
+}
+table .interpretation .show:before {
+  content: "show";
+}
+table .interpretation .show:hover {
+  cursor: pointer;
+  background-color: #856fb3;
+  color: white;
+  -webkit-box-shadow: -1px -1px 2px #ccc;
+          box-shadow: -1px -1px 2px #ccc;
+}
+table .interpretation .show:active {
+  position: relative;
+  top: 1.5px;
+  left: 1.5px;
+}
+table .interpretation .hide {
+  width: 100px;
+  max-width: 100%;
+  height: 25px;
+  margin: 10px;
+  font-family: "Consolas";
+  letter-spacing: 1px;
+  font-weight: bold;
+  border-radius: 6px;
+  border-color: #898199;
+  background-color: #856fb3;
+  color: white;
+  -webkit-box-shadow: -1px -1px 2px #ccc;
+          box-shadow: -1px -1px 2px #ccc;
+}
+table .interpretation .hide:before {
+  content: "hide";
+}
+table .interpretation .hide:hover {
+  cursor: pointer;
+  background-color: #b7adcc;
+  color: white;
+  -webkit-box-shadow: -1px -1px 2px #ccc;
+          box-shadow: -1px -1px 2px #ccc;
+}
+table .interpretation p {
+  font-size: 16px;
+  text-align: left;
+  padding-left: 10px;
+  padding-right: 10px;
+  display: none;
 }/*# sourceMappingURL=style.css.map */
