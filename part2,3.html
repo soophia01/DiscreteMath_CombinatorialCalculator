@@ -10,85 +10,8 @@
     <title>Combinatorial Calculator</title>
 </head>
 <body>
-    <h1>Combinatorial Calculator</h1>
-    <h2> ——— 311706016 廖仕雅 ——— </h2>
-    <!-- part1 -->
-    <h3>Part 1</h2>
-    <table>
-        <tr class="dc-color1">
-            <th class="table-header1"></th>
-            <th class="table-header1 text-center">Permutations</th>
-            <th class="table-header1 text-center">Combinations</th>
-            <th class="table-header1 text-center">Arrangements with repetition</th>
-            <th class="table-header1 text-center">Selections with repetition</th>
-        </tr>
-        <tr class="dc-color2">
-            <th class="table-header1 text-left">Formula</th>
-            <td>P(n, r)</td>
-            <td>C(n, r)</td>
-            <td>n^r</td>
-            <td>C(r+n-1, r)</td>
-        </tr>
-        <tr class="dc-color1">
-            <th class="table-header1 text-left">Order relevant</th>
-            <td>Yes</td>
-            <td>No</td>
-            <td>Yes</td>
-            <td>No</td>
-        </tr>
-        <tr class="dc-color2">
-            <th class="table-header1 text-left">Allows repetition</th>
-            <td>No</td>
-            <td>No</td>
-            <td>Yes</td>
-            <td>Yes</td>
-        </tr>
-        <tr class="dc-color1 interpretation">
-            <th class="table-header1 text-left">Interpretation</th>
-            <td>
-                <button type="button" class="show"></button>
-                <p>Permutations of size r from n distinct objects</p>
-            </td>
-            <td>
-                <button type="button" class="show"></button>
-                <p>Selections/Combinations of size r from n distinct objects</p>
-            </td>
-            <td>
-                <button type="button" class="show"></button>
-                <p>Arrangements with repetition of size r from n distinct objects</p>
-            </td>
-            <td>
-                <button type="button" class="show"></button>
-                <p>Selections with repetition of size r from n distinct objects</p>
-            </td>
-        </tr>
-        <tr class="dc-color2">
-            <th class="table-header1 text-left">
-                <label for="sample">n =</label> 
-                <input type="number" id="sample" min="0">
-            </th>
-            <td rowspan="2"><button type="button" onclick="clickPerm()">Compute</button></td>
-            <td rowspan="2"><button type="button" onclick="clickComb()">Compute</button></td>
-            <td rowspan="2"><button type="button" onclick="clickArra()">Compute</button></td>
-            <td rowspan="2"><button type="button"  onclick="clickSele()">Compute</button></td>
-        </tr>
-        <tr>
-            <th class="table-header1 text-left">
-                <label for="objects">r =</label>
-                <input type="number" id="objects" min="0">
-            </th>
-        </tr>
-        <tr class="dc-color1 last-row">
-            <th class="table-header1"><button type="button" class="computeAll" onclick="computeAll()">Compute All</button></th>
-            <td><span id="permutation-result"></span></td>
-            <td><span id="combination-result"></span></td>
-            <td><span id="arrangement-result"></span></td>
-            <td><span id="Selections-result"></span></td>
-        </tr>
-    </table>
-
-    <!-- part2, part3 -->
-    <h3>Part 2 & Part 3</h2>
+    <!-- part2 -->
+    <h2>Part 2</h2>
     <table>
         <tr class="dc2-color1">
             <th class="table-header2"></th>
@@ -117,7 +40,7 @@
             <td>n(n+1)/2</td>
             <td class="interpretation2">
                 <button type="button" class="show"></button>
-                <p>These are used to count the number of ways to divide a polygon into triangles.</p>
+                <p></p>
             </td>
             <td>
                 <button type="button" onclick="clickTriangular()">Compute</button>
@@ -129,7 +52,7 @@
             <td>Hn = Hn−1 + 1/n </td>
             <td class="interpretation2">
                 <button type="button" class="show"></button>
-                <p>These are the numbers that can be represented as the sum of the integers from 1 to n.</p>
+                <p></p>
             </td>
             <td>
                 <button type="button" onclick="clickHarmonic()">Compute</button>
@@ -141,8 +64,7 @@
             <td>Xn = Xn−1 + Xn−2</td>
             <td class="interpretation2">
                 <button type="button" class="show"></button>
-                <p> These are the sum of the reciprocals of the positive integers.
-                    Fibonacci numbers: These are a sequence of numbers where each number is the sum of the two preceding ones.</p>
+                <p></p>
             </td>
             <td>
                 <button type="button" onclick="clickFib()">Compute</button>
@@ -167,7 +89,7 @@
             <!-- <td>A(n, m) = (n - m) * A(n - 1, m - 1) + (m + 1) * A(n - 1, m)</td> -->
             <td class="interpretation2">
                 <button type="button" class="show"></button>
-                <p>These are a related sequence of numbers that start with 2 and 1 instead of 0 and 1.</p>
+                <p></p>
             </td>
             <td>
                 <button type="button" onclick="clickEul()">Compute</button>
@@ -179,7 +101,7 @@
             <td>S(n,m) = m! ∑ (-1)^k C(m, k) ∑ k^(n-k)</td>
             <td class="interpretation2">
                 <button type="button" class="show"></button>
-                <p>The number of ways of partitioning a set of n elements into m nonempty sets.</p></td>
+                <p>The number of ways of partitioning a set of n elements into m nonempty sets</p></td>
             <td>
                 <button type="button" onclick="clickStir()">Compute</button>
             </td>

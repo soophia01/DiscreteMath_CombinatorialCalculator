@@ -9,6 +9,34 @@ h1 {
   color: #849485;
   letter-spacing: 2px;
   font-family: "Bookman Old Style";
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+h2 {
+  font-size: 18px;
+  text-align: center;
+  color: #849485;
+  padding-top: 0;
+  margin-top: 5px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+button {
+  width: 100px;
+  max-width: 100%;
+  font-family: "Consolas";
+  letter-spacing: 1px;
+  border-radius: 6px;
+  font-weight: bold;
+  text-align: center;
 }
 
 table {
@@ -19,19 +47,18 @@ table tr {
   height: 25px;
   text-align: center;
 }
-table tr .text-center {
-  text-align: center;
-}
 table tr input {
   width: 120px;
   max-width: 100%;
 }
-table tr th {
+table tr .table-header1, table tr .table-header2 {
   background-color: #849c85;
   color: white;
-  text-align: left;
   text-indent: 10px;
   font-size: 17px;
+}
+table tr .table-header2 {
+  background-color: #85586f;
 }
 table tr:nth-child(1) th {
   border-top-left-radius: 7px;
@@ -40,7 +67,11 @@ table tr:nth-child(1) th {
   font-size: 20px;
   letter-spacing: 1px;
 }
-table tr:nth-child(8) th, table tr:nth-child(8) td {
+table .dc-color1:nth-child(1) th, table .dc2-color1:nth-child(1) th {
+  width: 250px;
+  max-width: 100%;
+}
+table .last-row th, table .last-row td {
   border-bottom-left-radius: 7px;
   border-bottom-right-radius: 7px;
   height: 40px;
@@ -51,16 +82,16 @@ table .dc-color1 {
 table .dc-color2 {
   background-color: #fffbe9;
 }
+table .dc2-color1 {
+  background-color: #f8ede3;
+}
+table .dc2-color2 {
+  background-color: #dfd3c3;
+}
 table .dc-color1 th button, table .dc-color2 td button {
-  width: 100px;
-  max-width: 100%;
   height: 30px;
-  font-family: "Consolas";
-  letter-spacing: 1px;
-  font-weight: bold;
   background-color: #FFED9A;
   color: #998d5c;
-  border-radius: 6px;
   border-color: #998d5c;
 }
 table .dc-color1 th button:hover, table .dc-color2 td button:hover {
@@ -75,32 +106,33 @@ table .dc-color1 th button:active, table .dc-color2 td button:active {
   top: 1.5px;
   left: 1.5px;
 }
-table .dc-color1:nth-child(1) th {
-  width: 250px;
-  max-width: 100%;
+table .dc2-color1 td button, table .dc2-color1 th button, table .dc2-color2 td button {
+  height: 30px;
+  background-color: #cf7f7f;
+  color: white;
+  border-color: #946f6f;
 }
-table .dc-color1:nth-child(8) th {
-  text-align: center;
-  text-indent: 0px;
+table .dc2-color1 td button:hover, table .dc2-color1 th button:hover, table .dc2-color2 td button:hover {
+  cursor: pointer;
+  background-color: #915d5d;
+  color: white;
+  border-color: #946f6f;
+  -webkit-box-shadow: -1px -1px 2px #ccc;
+          box-shadow: -1px -1px 2px #ccc;
 }
-table .dc-color1:nth-child(8) th button {
-  width: 150px;
-  text-align: center;
+table .dc2-color1 td button:active, table .dc2-color1 th button:active, table .dc2-color2 td button:active {
+  position: relative;
+  top: 1.5px;
+  left: 1.5px;
 }
 table .interpretation {
   height: 35px;
 }
 table .interpretation .show {
-  width: 100px;
-  max-width: 100%;
-  height: 25px;
+  height: 30px;
   margin: 10px;
-  font-family: "Consolas";
-  letter-spacing: 1px;
-  font-weight: bold;
   background-color: #b7adcc;
   color: white;
-  border-radius: 6px;
   border-color: #898199;
 }
 table .interpretation .show:before {
@@ -109,7 +141,6 @@ table .interpretation .show:before {
 table .interpretation .show:hover {
   cursor: pointer;
   background-color: #856fb3;
-  color: white;
   -webkit-box-shadow: -1px -1px 2px #ccc;
           box-shadow: -1px -1px 2px #ccc;
 }
@@ -119,17 +150,8 @@ table .interpretation .show:active {
   left: 1.5px;
 }
 table .interpretation .hide {
-  width: 100px;
-  max-width: 100%;
-  height: 25px;
-  margin: 10px;
-  font-family: "Consolas";
-  letter-spacing: 1px;
-  font-weight: bold;
-  border-radius: 6px;
   border-color: #898199;
   background-color: #856fb3;
-  color: white;
   -webkit-box-shadow: -1px -1px 2px #ccc;
           box-shadow: -1px -1px 2px #ccc;
 }
@@ -139,14 +161,55 @@ table .interpretation .hide:before {
 table .interpretation .hide:hover {
   cursor: pointer;
   background-color: #b7adcc;
-  color: white;
   -webkit-box-shadow: -1px -1px 2px #ccc;
           box-shadow: -1px -1px 2px #ccc;
 }
-table .interpretation p {
+table .interpretation2 {
+  height: 35px;
+}
+table .interpretation2 .show {
+  margin: 10px;
+  background-color: #ffdb89;
+  color: #a26c3d;
+  border-color: #a26c3d;
+}
+table .interpretation2 .show:before {
+  content: "show";
+}
+table .interpretation2 .show:hover {
+  cursor: pointer;
+  background-color: #f8a353;
+  -webkit-box-shadow: -1px -1px 2px #ccc;
+          box-shadow: -1px -1px 2px #ccc;
+}
+table .interpretation2 .show:active {
+  position: relative;
+  top: 1.5px;
+  left: 1.5px;
+}
+table .interpretation2 .hide {
+  background-color: #f8a353;
+  -webkit-box-shadow: -1px -1px 2px #ccc;
+          box-shadow: -1px -1px 2px #ccc;
+  color: white;
+}
+table .interpretation2 .hide:before {
+  content: "hide";
+}
+table .interpretation2 .hide:hover {
+  cursor: pointer;
+  background-color: #f8a353;
+  -webkit-box-shadow: -1px -1px 2px #ccc;
+          box-shadow: -1px -1px 2px #ccc;
+}
+table .interpretation p, table .interpretation2 p {
   font-size: 16px;
   text-align: left;
   padding-left: 10px;
   padding-right: 10px;
   display: none;
+}
+table .computeAll {
+  text-indent: 0px;
+  width: 150px;
 }/*# sourceMappingURL=style.css.map */

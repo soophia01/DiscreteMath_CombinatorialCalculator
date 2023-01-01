@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    $('.interpretation button').click(function (e) { 
+    $('.interpretation button, .interpretation2 button').click(function (e) { 
       e.preventDefault();
       $(this).parent().find('p').slideToggle()
       $(this).toggleClass('hide').$(this).removeClass('show');
