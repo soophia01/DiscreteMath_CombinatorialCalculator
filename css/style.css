@@ -27,6 +27,7 @@ h2 {
 
 .text-left {
   text-align: left;
+  text-indent: 10px;
 }
 
 button {
@@ -54,7 +55,6 @@ table tr input {
 table tr .table-header1, table tr .table-header2 {
   background-color: #849c85;
   color: white;
-  text-indent: 10px;
   font-size: 17px;
 }
 table tr .table-header2 {
@@ -212,4 +212,7 @@ table .interpretation p, table .interpretation2 p {
 table .computeAll {
   text-indent: 0px;
   width: 150px;
+}
+table span {
+  margin-right: 10px;
 }/*# sourceMappingURL=style.css.map */

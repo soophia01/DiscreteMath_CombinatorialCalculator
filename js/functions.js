@@ -170,26 +170,44 @@ function lucas(n) {
 
 // Eulerian number
 function eulerTriangle(n) {
-    let triangle = [];
-    for (let i = 0; i < n; i++) {
-        let row = [];
-        for (let j = 0; j <= i; j++) {
-            if (j === 0 || j === i) {
-                row.push(1);
-            } else {
-                let prevRow = triangle[i - 1];
-                row.push(prevRow[j - 1] + prevRow[j]);
-            }
-        }
-        triangle.push(row);
+    const row = [];
+    for (let m = 0; m < n; m++) {
+        row.push(eulerTriangleElement(n, m));
     }
-    return triangle[n - 1];
+    return row;
 }
 
-
+function eulerTriangleElement(n, m) {
+    if (n === 0 && m === 0) {
+        return 1;
+    }
+    if (m < 0 || m > n) {
+        return 0;
+    }
+    return (n - m) * eulerTriangleElement(n - 1, m - 1) + (m + 1) * eulerTriangleElement(n - 1, m);
+}
 
 // Stirling number
+function stirlingNumbers(n) {
+    const row = [];
+    for (let k = 1; k <= n; k++) {
+        const number = stirlingNumber(n, k);
+        if (number !== 0) {
+            row.push(number);
+        }
+    }
+    return row;
+}
 
+function stirlingNumber(n, k) {
+    if (n === 0 && k === 0) {
+        return 1;
+    }
+    if (n === 0 || k === 0) {
+        return 0;
+    }
+    return (k * stirlingNumber(n - 1, k)) + stirlingNumber(n - 1, k - 1);
+}
 
 
 
@@ -257,7 +275,7 @@ function clickStir() {
     document.getElementById("stirling-result").innerHTML = "";
     n = document.getElementById("n").value;
     if (invalid2(n)) return;
-    document.getElementById("stirling-result").innerHTML = lucas(n);
+    document.getElementById("stirling-result").innerHTML = stirlingNumbers(n);
 }
 
 
