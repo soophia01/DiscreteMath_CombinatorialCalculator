@@ -19,6 +19,9 @@ h2{
     padding-top: 0;
     margin-top: 5px;
 }
+.second-part{
+    margin-top: 60px;
+}
 .text-center{
     text-align: center;
 }
@@ -54,6 +57,10 @@ table{
         .table-header2{
             background-color:#85586f;
         }
+        th{
+            width: 250px;
+            max-width: 100%;
+        }
         &:nth-child(1){
             th{
                 border-top-left-radius: 7px;
@@ -64,10 +71,16 @@ table{
             }
         }
     }
-    .dc-color1, .dc2-color1{
+    th{
         &:nth-child(1){
-            th{
-                width: 250px;
+            width: 200px;
+            max-width: 100%;
+        }
+    }
+    .dc2-color1{
+        th{
+            &:nth-child(2){
+                width: 500px;
                 max-width: 100%;
             }
         }

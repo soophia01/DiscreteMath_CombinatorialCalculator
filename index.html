@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="http://fred-wang.github.io/mathjax.js/mpadded-min.js"></script>
     <script src="https://npmcdn.com/fraction.js"></script>
     <link rel="stylesheet" href="css/style.css">
     <title>Combinatorial Calculator</title>
@@ -13,7 +14,7 @@
     <h1>Combinatorial Calculator</h1>
     <h2> ——— 311706016 廖仕雅 ——— </h2>
     <!-- part1 -->
-    <h3>Part 1</h2>
+    <h3>Part 1</h3>
     <table>
         <tr class="dc-color1">
             <th class="table-header1"></th>
@@ -24,10 +25,85 @@
         </tr>
         <tr class="dc-color2">
             <th class="table-header1 text-left">Formula</th>
-            <td>P(n, r)</td>
-            <td>C(n, r)</td>
-            <td>n^r</td>
-            <td>C(r+n-1, r)</td>
+            <td>
+                <math xmlns='http://www.w3.org/1998/Math/MathML'>
+                    <mi> P </mi>
+                    <mrow>
+                      <mo> ( </mo>
+                        <mtable>
+                          <mtr>
+                            <mtd>
+                              <mi> n </mi>
+                            </mtd>
+                          </mtr>
+                          <mtr>
+                            <mtd>
+                              <mi> r </mi>
+                            </mtd>
+                          </mtr>
+                        </mtable>
+                      <mo> ) </mo>
+                    </mrow>
+                </math>                  
+            </td>
+            <td>
+                <math xmlns='http://www.w3.org/1998/Math/MathML'>
+                    <mi> C </mi>
+                    <mrow>
+                      <mo> ( </mo>
+                        <mtable>
+                          <mtr>
+                            <mtd>
+                              <mi> n </mi>
+                            </mtd>
+                          </mtr>
+                          <mtr>
+                            <mtd>
+                              <mi> r </mi>
+                            </mtd>
+                          </mtr>
+                        </mtable>
+                      <mo> ) </mo>
+                    </mrow>
+                </math>                  
+            </td>
+            <td>
+                <math xmlns='http://www.w3.org/1998/Math/MathML'>
+                    <msup>
+                      <mrow>
+                        <mi> n </mi>
+                      </mrow>
+                      <mrow>
+                        <mi> r </mi>
+                      </mrow>
+                    </msup>
+                </math>                  
+            </td>
+            <td>
+                <math xmlns='http://www.w3.org/1998/Math/MathML'>
+                    <mi> C </mi>
+                    <mrow>
+                      <mo> ( </mo>
+                        <mtable>
+                          <mtr>
+                            <mtd>
+                              <mi> r </mi>
+                              <mo> + </mo>
+                              <mi> n </mi>
+                              <mo> - </mo>
+                              <mn> 1 </mn>
+                            </mtd>
+                          </mtr>
+                          <mtr>
+                            <mtd>
+                              <mi> r </mi>
+                            </mtd>
+                          </mtr>
+                        </mtable>
+                      <mo> ) </mo>
+                    </mrow>
+                </math>                  
+            </td>
         </tr>
         <tr class="dc-color1">
             <th class="table-header1 text-left">Order relevant</th>
@@ -88,7 +164,7 @@
     </table>
 
     <!-- part2, part3 -->
-    <h3>Part 2 & Part 3</h2>
+    <h3 class="second-part">Part 2 & Part 3</h3>
     <table>
         <tr class="dc2-color1">
             <th class="table-header2"></th>
@@ -102,86 +178,458 @@
         </tr>
         <tr class="dc2-color1">
             <th class="table-header2 text-left">Catalan number</th>
-            <td>Cn = (2n)! / ((n + 1)! n!)</td>
+            <td class="text-left">
+                <math xmlns='http://www.w3.org/1998/Math/MathML'>
+                    <msub>
+                      <mrow>
+                        <mi> C </mi>
+                      </mrow>
+                      <mrow>
+                        <mi> n </mi>
+                      </mrow>
+                    </msub>
+                    <mo> = </mo>
+                    <mfrac>
+                      <mrow>
+                        <mrow>
+                          <mo> ( </mo>
+                            <mn> 2 </mn>
+                            <mi> n </mi>
+                          <mo> ) </mo>
+                        </mrow>
+                        <mo> ! </mo>
+                      </mrow>
+                      <mrow>
+                        <mrow>
+                          <mo> ( </mo>
+                            <mi> n </mi>
+                            <mo> + </mo>
+                            <mn> 1 </mn>
+                          <mo> ) </mo>
+                        </mrow>
+                        <mo> ! </mo>
+                        <mi> n </mi>
+                        <mo> ! </mo>
+                      </mrow>
+                    </mfrac>
+                  </math>
+                  
+            </td>
             <td class="interpretation2">
                 <button type="button" class="show"></button>
-                <p></p>
+                <p>Catalan numbers are defined as a mathematical sequence that consists of positive integers, which can be used to find the number of possibilities of various combinations.</p>
             </td>
-            <td>
-                <button type="button" onclick="clickCatalan()">Compute</button>
+            <td class="tooltip">
+                <button type="button" onclick="clickCatalan()" title="列出第 0 ~ n 項結果">Compute</button>
             </td>
             <td class="text-left"><span id="catalan-result"></span></td>
         </tr>
         <tr class="dc2-color2">
             <th class="table-header2 text-left">Triangular number</th>
-            <td>n(n+1)/2</td>
+            <td class="text-left">
+                <math xmlns='http://www.w3.org/1998/Math/MathML'>
+                    <msub>
+                      <mrow>
+                        <mi> T </mi>
+                      </mrow>
+                      <mrow>
+                        <mi> n </mi>
+                      </mrow>
+                    </msub>
+                    <mo> = </mo>
+                    <mfrac>
+                      <mrow>
+                        <mi> n </mi>
+                        <mrow>
+                          <mo> ( </mo>
+                            <mi> n </mi>
+                            <mo> + </mo>
+                            <mn> 1 </mn>
+                          <mo> ) </mo>
+                        </mrow>
+                      </mrow>
+                      <mrow>
+                        <mn> 2 </mn>
+                      </mrow>
+                    </mfrac>
+                  </math>                  
+            </td>
             <td class="interpretation2">
                 <button type="button" class="show"></button>
-                <p>These are used to count the number of ways to divide a polygon into triangles.</p>
+                <p>The nth triangular number is the number of dots in the triangular arrangement with n dots on each side, and is equal to the sum of the n natural numbers from 1 to n.</p>
             </td>
             <td>
-                <button type="button" onclick="clickTriangular()">Compute</button>
+                <button type="button" onclick="clickTriangular()" title="列出第 0 ~ n 項結果">Compute</button>
             </td>
             <td class="text-left"><span id="triangular-result"></span></td>
         </tr>
         <tr class="dc2-color1">
             <th class="table-header2 text-left">Harmonic number</th>
-            <td>Hn = Hn−1 + 1/n </td>
+            <td class="text-left">
+                <math xmlns='http://www.w3.org/1998/Math/MathML'>
+                    <msub>
+                      <mrow>
+                        <mi> H </mi>
+                      </mrow>
+                      <mrow>
+                        <mi> n </mi>
+                      </mrow>
+                    </msub>
+                    <mo> = </mo>
+                    <munderover>
+                      <mrow>
+                        <mo> &#x2211; <!-- n-ary summation --> </mo>
+                      </mrow>
+                      <mrow>
+                        <mi> k </mi>
+                        <mo> = </mo>
+                        <mn> 1 </mn>
+                      </mrow>
+                      <mrow>
+                        <mi> n </mi>
+                      </mrow>
+                    </munderover>
+                    <mfrac>
+                      <mrow>
+                        <mn> 1 </mn>
+                      </mrow>
+                      <mrow>
+                        <mi> k </mi>
+                      </mrow>
+                    </mfrac>
+                  </math>                  
+            </td>
             <td class="interpretation2">
                 <button type="button" class="show"></button>
-                <p>These are the numbers that can be represented as the sum of the integers from 1 to n.</p>
+                <p>In mathematics, the n-th harmonic number is the sum of the reciprocals of the first n natural numbers.</p>
             </td>
             <td>
-                <button type="button" onclick="clickHarmonic()">Compute</button>
+                <button type="button" onclick="clickHarmonic()" title="列出第 0 ~ n 項結果">Compute</button>
             </td>
             <td class="text-left"><span id="harmonic-result"></span></td>
         </tr>
         <tr class="dc2-color2">
             <th class="table-header2 text-left">Fibonacci number</th>
-            <td>Xn = Xn−1 + Xn−2</td>
+            <td class="text-left">
+                <math xmlns='http://www.w3.org/1998/Math/MathML'>
+                    <mtable columnalign='left'>
+                      <mtr>
+                        <mtd>
+                          <msub>
+                            <mrow>
+                              <mi> F </mi>
+                            </mrow>
+                            <mrow>
+                              <mn> 0 </mn>
+                            </mrow>
+                          </msub>
+                          <mo> = </mo>
+                          <mn> 0 </mn>
+                          <mo> , </mo>
+                          <msub>
+                            <mrow>
+                              <mi> F </mi>
+                            </mrow>
+                            <mrow>
+                              <mn> 1 </mn>
+                            </mrow>
+                          </msub>
+                          <mo> = </mo>
+                          <mo> 1 </mo>
+                        </mtd>
+                      </mtr>
+                      <mtr>
+                        <mtd>
+                          <msub>
+                            <mrow>
+                              <mi> F </mi>
+                            </mrow>
+                            <mrow>
+                              <mi> n </mi>
+                            </mrow>
+                          </msub>
+                          <mo> = </mo>
+                          <msub>
+                            <mrow>
+                              <mi> F </mi>
+                            </mrow>
+                            <mrow>
+                              <mi> n </mi>
+                              <mo> - </mo>
+                              <mn> 1 </mn>
+                            </mrow>
+                          </msub>
+                          <mo> + </mo>
+                          <msub>
+                            <mrow>
+                              <mi> F </mi>
+                            </mrow>
+                            <mrow>
+                              <mi> n </mi>
+                              <mo> - </mo>
+                              <mn> 2 </mn>
+                            </mrow>
+                          </msub>
+                        </mtd>
+                      </mtr>
+                    </mtable>
+                </math>                  
+            </td>
             <td class="interpretation2">
                 <button type="button" class="show"></button>
-                <p> These are the sum of the reciprocals of the positive integers.
-                    Fibonacci numbers: These are a sequence of numbers where each number is the sum of the two preceding ones.</p>
+                <p>In mathematics, the Fibonacci sequence, in which each number is equal to the sum of the preceding two numbers.</p>
             </td>
             <td>
-                <button type="button" onclick="clickFib()">Compute</button>
+                <button type="button" onclick="clickFib()" title="列出第 0 ~ n 項結果">Compute</button>
             </td>
             <td class="text-left"><span id="fibonacci-result"></span></td>
         </tr>
         <tr class="dc2-color1">
             <th class="table-header2 text-left">Lucas number</th>
-            <td>Ln = Ln-1 + Ln-2</td>
+            <td class="text-left">
+                <math xmlns='http://www.w3.org/1998/Math/MathML'>
+                    <mtable columnalign='left'>
+                      <mtr>
+                        <mtd>
+                          <msub>
+                            <mrow>
+                              <mi> L </mi>
+                            </mrow>
+                            <mrow>
+                              <mn> 0 </mn>
+                            </mrow>
+                          </msub>
+                          <mo> = </mo>
+                          <mn> 2 </mn>
+                          <mo> , </mo>
+                          <msub>
+                            <mrow>
+                              <mi> L </mi>
+                            </mrow>
+                            <mrow>
+                              <mn> 1 </mn>
+                            </mrow>
+                          </msub>
+                          <mo> = </mo>
+                          <mn> 1 </mn>
+                        </mtd>
+                      </mtr>
+                      <mtr>
+                        <mtd>
+                          <msub>
+                            <mrow>
+                              <mi> L </mi>
+                            </mrow>
+                            <mrow>
+                              <mi> n </mi>
+                            </mrow>
+                          </msub>
+                          <mo> = </mo>
+                          <msub>
+                            <mrow>
+                              <mi> L </mi>
+                            </mrow>
+                            <mrow>
+                              <mi> n </mi>
+                              <mo> - </mo>
+                              <mn> 1 </mn>
+                            </mrow>
+                          </msub>
+                          <mo> + </mo>
+                          <msub>
+                            <mrow>
+                              <mi> L </mi>
+                            </mrow>
+                            <mrow>
+                              <mi> n </mi>
+                              <mo> - </mo>
+                              <mn> 2 </mn>
+                            </mrow>
+                          </msub>
+                        </mtd>
+                      </mtr>
+                    </mtable>
+                </math>                  
+            </td>
             <td class="interpretation2">
                 <button type="button" class="show"></button>
-                <p></p>
+                <p>Lucas numbers are similar to Fibonacci numbers. Lucas numbers are also defined as the sum of its two immediately previous terms. But here the first two terms are 2 and 1 whereas in Fibonacci numbers the first two terms are 0 and 1 respectively. </p>
             </td>
             <td>
-                <button type="button" onclick="clickLuc()">Compute</button>
+                <button type="button" onclick="clickLuc()" title="列出第 0 ~ n 項結果">Compute</button>
             </td>
             <td class="text-left"><span id="lucas-result"></span></td>
         </tr>
         <tr class="dc2-color2">
             <th class="table-header2 text-left">Eulerian number</th>
-            <td>An = (n-1)! ∑ (k+1)C(n, k)</td>
-            <!-- <td>A(n, m) = (n - m) * A(n - 1, m - 1) + (m + 1) * A(n - 1, m)</td> -->
+            <td class="text-left">
+                <math xmlns='http://www.w3.org/1998/Math/MathML'>
+                    <mi> E </mi>
+                    <mrow>
+                      <mo> ( </mo>
+                        <mtable>
+                          <mtr>
+                            <mtd>
+                              <mi> m </mi>
+                            </mtd>
+                          </mtr>
+                          <mtr>
+                            <mtd>
+                              <mi> n </mi>
+                            </mtd>
+                          </mtr>
+                        </mtable>
+                      <mo> ) </mo>
+                    </mrow>
+                    <mo> = </mo>
+                    <mi> n </mi>
+                    <mi> E </mi>
+                    <mrow>
+                      <mo> ( </mo>
+                        <mtable>
+                          <mtr>
+                            <mtd>
+                              <mi> m </mi>
+                              <mo> - </mo>
+                              <mn> 1 </mn>
+                            </mtd>
+                          </mtr>
+                          <mtr>
+                            <mtd>
+                              <mi> n </mi>
+                            </mtd>
+                          </mtr>
+                        </mtable>
+                      <mo> ) </mo>
+                    </mrow>
+                    <mo> + </mo>
+                    <mi> m </mi>
+                    <mi> E </mi>
+                    <mrow>
+                      <mo> ( </mo>
+                        <mtable>
+                          <mtr>
+                            <mtd>
+                              <mi> m </mi>
+                            </mtd>
+                          </mtr>
+                          <mtr>
+                            <mtd>
+                              <mi> n </mi>
+                              <mo> - </mo>
+                              <mn> 1 </mn>
+                            </mtd>
+                          </mtr>
+                        </mtable>
+                      <mo> ) </mo>
+                    </mrow>
+                </math>                  
+            </td>
             <td class="interpretation2">
                 <button type="button" class="show"></button>
-                <p>These are a related sequence of numbers that start with 2 and 1 instead of 0 and 1.</p>
+                <p>In combinatorics, the Eulerian number A(n, m) is the number of permutations of the numbers 1 to n in which exactly m elements are greater than the previous element (permutations with m "ascents").</p>
             </td>
             <td>
-                <button type="button" onclick="clickEul()">Compute</button>
+                <button type="button" onclick="clickEul()" title="列出前 n 個結果">Compute</button>
             </td>
             <td class="text-left"><span id="eulerian-result"></span></td>
         </tr>
         <tr class="dc2-color1 last-row">
             <th class="table-header2 text-left">Stirling number</th>
-            <td>S(n,m) = m! ∑ (-1)^k C(m, k) ∑ k^(n-k)</td>
+            <td class="text-left">
+                <math xmlns='http://www.w3.org/1998/Math/MathML'>
+                    <mi> S </mi>
+                    <mrow>
+                      <mo> ( </mo>
+                        <mtable>
+                          <mtr>
+                            <mtd>
+                              <mi> n </mi>
+                            </mtd>
+                          </mtr>
+                          <mtr>
+                            <mtd>
+                              <mi> m </mi>
+                            </mtd>
+                          </mtr>
+                        </mtable>
+                      <mo> ) </mo>
+                    </mrow>
+                    <mo> = </mo>
+                    <mfrac>
+                      <mrow>
+                        <mn> 1 </mn>
+                      </mrow>
+                      <mrow>
+                        <mi> n </mi>
+                        <mo> ! </mo>
+                      </mrow>
+                    </mfrac>
+                    <munderover>
+                      <mrow>
+                        <mo> &#x2211; <!-- n-ary summation --> </mo>
+                      </mrow>
+                      <mrow>
+                        <mi> k </mi>
+                        <mo> = </mo>
+                        <mn> 0 </mn>
+                      </mrow>
+                      <mrow>
+                        <mi> n </mi>
+                      </mrow>
+                    </munderover>
+                    <msup>
+                      <mrow>
+                        <mrow>
+                          <mo> ( </mo>
+                            <mo> - </mo>
+                            <mn> 1 </mn>
+                          <mo> ) </mo>
+                        </mrow>
+                      </mrow>
+                      <mrow>
+                        <mi> k </mi>
+                      </mrow>
+                    </msup>
+                    <mrow>
+                      <mo> ( </mo>
+                        <mtable>
+                          <mtr>
+                            <mtd>
+                              <mi> n </mi>
+                            </mtd>
+                          </mtr>
+                          <mtr>
+                            <mtd>
+                              <mi> n </mi>
+                              <mo> - </mo>
+                              <mi> k </mi>
+                            </mtd>
+                          </mtr>
+                        </mtable>
+                      <mo> ) </mo>
+                    </mrow>
+                    <msup>
+                      <mrow>
+                        <mrow>
+                          <mo> ( </mo>
+                            <mi> n </mi>
+                            <mo> - </mo>
+                            <mi> k </mi>
+                          <mo> ) </mo>
+                        </mrow>
+                      </mrow>
+                      <mrow>
+                        <mi> m </mi>
+                      </mrow>
+                    </msup>
+                </math>                  
+            </td>
             <td class="interpretation2">
                 <button type="button" class="show"></button>
                 <p>The number of ways of partitioning a set of n elements into m nonempty sets.</p></td>
             <td>
-                <button type="button" onclick="clickStir()">Compute</button>
+                <button type="button" onclick="clickStir()" title="列出前 n 個結果">Compute</button>
             </td>
             <td class="text-left"><span id="stirling-result"></span></td>
         </tr>

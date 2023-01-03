@@ -103,11 +103,14 @@ function computeAll() {
 // part 2
 // Catalan Number
 function catalan(n) {
-    if (n <= 1) {
-        return 1;
+    if (n == 0) {
+        return [1];
     }
-    const catalanNumbers = [1];
-    for (let i = 1; i <= n - 1; i++) {
+    if (n == 1){
+        return [1, 1];
+    }
+    const catalanNumbers = [1, 1];
+    for (let i = 2; i <= n; i++) {
         let result = 0;
         for (let j = 0; j < i; j++) {
             result += catalanNumbers[j] * catalanNumbers[i - j - 1];
@@ -117,9 +120,10 @@ function catalan(n) {
     return catalanNumbers;
 }
 
+
 // Triangular Number
 function triangular(n) {
-    const triangularNumbers = [];
+    const triangularNumbers = [0];
     for (let i = 1; i <= n; i++) {
         triangularNumbers.push((i * (i + 1)) / 2);
     }
@@ -128,7 +132,7 @@ function triangular(n) {
 
 // Harmonic Number
 function harmonic(n) {
-    let fractions = [];
+    let fractions = [1];
     let sum = new Fraction(0);
     for (let i = 1; i <= n; i++) {
         let fraction = new Fraction(1, i);
@@ -141,15 +145,18 @@ function harmonic(n) {
 // Fibonacci
 function fibonacci(n) {
     let results = [];
-    for (let i = 0; i < n; i++) {
-        if (i === 0 || i === 1) {
-            results.push(i);
+    for (let i = 0; i <= n; i++) {
+        if (i === 0) {
+            results.push(0);
+        } else if (i === 1) {
+            results.push(1);
         } else {
             results.push(results[i - 1] + results[i - 2]);
         }
     }
     return results;
 }
+
 
 // Lucas Number
 function lucas(n) {
@@ -160,7 +167,7 @@ function lucas(n) {
         results.push(2, 1);
     } else {
         results.push(2, 1);
-        for (let i = 2; i <= n - 1; i++) {
+        for (let i = 2; i <= n; i++) {
             let c = results[i - 1] + results[i - 2];
             results.push(c);
         }
@@ -168,9 +175,13 @@ function lucas(n) {
     return results;
 }
 
+
 // Eulerian number
 function eulerTriangle(n) {
     const row = [];
+    if (n == 0){
+        return 1
+    }
     for (let m = 0; m < n; m++) {
         row.push(eulerTriangleElement(n, m));
     }
@@ -190,6 +201,9 @@ function eulerTriangleElement(n, m) {
 // Stirling number
 function stirlingNumbers(n) {
     const row = [];
+    if (n == 0){
+        return 1
+    }
     for (let k = 1; k <= n; k++) {
         const number = stirlingNumber(n, k);
         if (number !== 0) {

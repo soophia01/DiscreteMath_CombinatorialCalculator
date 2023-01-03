@@ -21,6 +21,10 @@ h2 {
   margin-top: 5px;
 }
 
+.second-part {
+  margin-top: 60px;
+}
+
 .text-center {
   text-align: center;
 }
@@ -60,6 +64,10 @@ table tr .table-header1, table tr .table-header2 {
 table tr .table-header2 {
   background-color: #85586f;
 }
+table tr th {
+  width: 250px;
+  max-width: 100%;
+}
 table tr:nth-child(1) th {
   border-top-left-radius: 7px;
   border-top-right-radius: 7px;
@@ -67,8 +75,12 @@ table tr:nth-child(1) th {
   font-size: 20px;
   letter-spacing: 1px;
 }
-table .dc-color1:nth-child(1) th, table .dc2-color1:nth-child(1) th {
-  width: 250px;
+table th:nth-child(1) {
+  width: 200px;
+  max-width: 100%;
+}
+table .dc2-color1 th:nth-child(2) {
+  width: 500px;
   max-width: 100%;
 }
 table .last-row th, table .last-row td {
